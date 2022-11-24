@@ -16,8 +16,14 @@ public class Pizza {
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
-        if(this.isVeg) this.price = 300;
-        else this.price = 400;
+        if(this.isVeg) {
+            this.price = 300;
+            System.out.println("Base Price Of The Pizza: " + this.price + "\n");
+        }
+        else {
+            this.price = 400;
+            System.out.println("Base Price Of The Pizza: " + this.price + "\n");
+        }
     }
 
     public int getPrice(){
@@ -46,26 +52,35 @@ public class Pizza {
 
         //check extra cheese added should be added first then toppings should be added
         //ExtraCheese method should call first so to check we should use isToppingAdded variable and it must be false for the first time addition
-        if(this.isCheeseAdded && !this.isToppingsAdded){
-            this.price += 70;
-            System.out.println("Extra Toppings Added: 70\n");
+        if(this.isCheeseAdded && !this.isToppingsAdded) {
+            if (this.isVeg) {
+                this.price += 70;
+                System.out.println("Extra Toppings Added: 70\n");
+            } else {
+                this.price += 120;
+                System.out.println("Extra Toppings Added: 120\n");
+            }
             this.isToppingsAdded = true;
-        }else if(!this.isCheeseAdded){
-//            System.out.println("Please add extra cheese first!!!\n");
         }
+//        else if(!this.isCheeseAdded){
+////            System.out.println("Please add extra cheese first!!!\n");
+//        }
 
     }
 
     public void addTakeaway(){
         // your code goes here
+        if(!isPaperBagAdded) {
             this.price += 20;
             System.out.println("Paperbag Added: 20\n");
+            this.isPaperBagAdded = true;
+        }
+
     }
 
     public String getBill(){
         // your code goes here
         this.bill = this.price + "";
-        System.out.println("Total Price: " + this.bill);
         return this.bill;
     }
 }
