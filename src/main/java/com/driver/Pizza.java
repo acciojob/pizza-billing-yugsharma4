@@ -58,15 +58,8 @@ public class Pizza {
 
     public void addTakeaway(){
         // your code goes here
-
-        //check whether paper bag added for the first time or not
-        if(!isPaperBagAdded){
             this.price += 20;
-            this.isPaperBagAdded = true;
             System.out.println("Paperbag Added: 20\n");
-        }
-
-
     }
 
     public String getBill(){
