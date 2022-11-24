@@ -7,12 +7,12 @@ public class Main {
     dp.addTakeaway();
     dp.addExtraCheese();
     dp.addTakeaway();
-    System.out.println("Total Price: " + dp.getBill() + "\n");
+    System.out.println(dp.getBill() + "\n");
 
     Pizza p = new Pizza(false);
     p.addExtraCheese();
     p.addExtraToppings();
     p.addTakeaway();
-    System.out.println("Total Price: " + p.getBill() + "\n");
+    System.out.println(p.getBill() + "\n");
   }
 }
